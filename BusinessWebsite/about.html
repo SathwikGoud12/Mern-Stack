@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | MyCompany</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --brand: #00b4d8;
+        --ink: #222;
+        --muted: #666;
+        --panel: #ffffff;
+        --bg: #f6f7fb;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 40px;
+        background: rgba(0, 0, 0, 0.85);
+      }
+      .logo {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+      .logo span {
+        color: var(--brand);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .nav-links a.active {
+        color: var(--brand);
+        border-bottom: 2px solid var(--brand);
+        padding-bottom: 4px;
+      }
+
+      .about-hero {
+        position: relative;
+        height: 42vh;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        background: url("https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1600&q=80")
+          center/cover no-repeat;
+      }
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+      }
+      .about-hero h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 2.6rem;
+        margin: 0;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .about-wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+        padding: clamp(32px, 4vw, 64px) 8%;
+        align-items: center;
+      }
+      @media (max-width: 980px) {
+        .about-wrap {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+
+      .about-text {
+        background: var(--panel);
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+      .about-text h2 {
+        margin: 0 0 10px;
+        font-size: 2rem;
+        color: var(--brand);
+      }
+      .about-text p {
+        margin: 10px 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .pill {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #e9f8fc;
+        border: 1px solid #cfeff6;
+        color: #036b81;
+      }
+
+      .video-card {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+        background: #000;
+        isolation: isolate;
+      }
+      .video-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.12),
+          rgba(0, 0, 0, 0) 35%,
+          rgba(0, 0, 0, 0.2)
+        );
+      }
+      .video-frame {
+        display: block;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.02);
+      }
+      .video-caption {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        z-index: 2;
+        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        padding: 0 8% 40px;
+      }
+      .stat {
+        background: #fff;
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      }
+      .stat h3 {
+        margin: 0;
+        color: var(--brand);
+        font-size: 1.6rem;
+      }
+      .stat span {
+        display: block;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      @media (max-width: 820px) {
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .ceo-section {
+        padding: 60px 8%;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .ceo-img {
+        flex: 1;
+        min-width: 260px;
+      }
+      .ceo-img img {
+        width: 100%;
+        max-width: 340px;
+        border-radius: 18px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+      .ceo-img img:hover {
+        transform: scale(1.04);
+      }
+      .ceo-info {
+        flex: 2;
+        min-width: 280px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+      .ceo-info h2 {
+        margin: 0 0 12px;
+        font-size: 2rem;
+        color: var(--brand);
+      }
+      .ceo-info h4 {
+        margin: 0;
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .ceo-info p {
+        margin-top: 12px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .about-wrap,
+      .stats,
+      .ceo-section {
+        animation: fadeUp 1s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">My<span>Company</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about-hero">
+      <h1>About Us</h1>
+    </section>
+
+    <section class="about-wrap">
+      <div class="video-card">
+        <video
+          class="video-frame"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+          poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60"
+        >
+          <source
+            src="videos/3191900-uhd_3840_2160_25fps.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="video-caption">Inside MyCompany — innovation in motion</div>
+      </div>
+
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+          We turn ambitious ideas into real-world impact. With a decade of
+          delivery across industries, our teams blend strategy, design, and
+          engineering to build solutions that scale.
+        </p>
+        <p>
+          From cloud-native platforms to AI-driven automation, we help you move
+          faster with confidence. Our customer-first mindset means measurable
+          outcomes, not just outputs.
+        </p>
+        <div class="pill-row">
+          <span class="pill">10+ Years</span>
+          <span class="pill">500+ Projects</span>
+          <span class="pill">Global Team</span>
+          <span class="pill">ISO-Certified</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <h3>98%</h3>
+        <span>Client Satisfaction</span>
+      </div>
+      <div class="stat">
+        <h3>24/7</h3>
+        <span>Support Coverage</span>
+      </div>
+      <div class="stat">
+        <h3>300+</h3>
+        <span>Active Clients</span>
+      </div>
+      <div class="stat">
+        <h3>40%</h3>
+        <span>Faster Time-to-Market</span>
+      </div>
+    </section>
+
+    <section class="ceo-section">
+      <div class="ceo-img">
+        <img src="images/sathwik-pic.jpg" alt="CEO & Chairman" />
+      </div>
+      <div class="ceo-info">
+        <h2>Our Leadership</h2>
+        <h4>Sathwik Goud — CEO & Chairman</h4>
+        <p>
+          Sathwik leads MyCompany with a vision to merge innovation and impact.
+          With his dynamic approach, he drives the company to explore new
+          frontiers in technology while keeping people at the core. Under his
+          leadership, MyCompany has expanded globally and achieved record client
+          satisfaction.
+        </p>
+      </div>
+    </section>
+
+    <footer
+      style="background: #111; color: #aaa; text-align: center; padding: 20px"
+    >
+      &copy; 2025 MyCompany. All Rights Reserved.
+    </footer>
+  </body>
+</html>

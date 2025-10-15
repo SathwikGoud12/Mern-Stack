@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | MyCompany</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page">
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">My<span>Company</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Contact <span>Us</span></h1>
+    <p>We’d love to hear from you! Get in touch with us today.</p>
+  </section>
+
+  <section class="contact-container">
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form name="contactForm" action="#" method="POST" onsubmit="return validateContact()">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h2>Our Office</h2>
+      <p><strong>Address:</strong> 123 Business Street, New York, USA</p>
+      <p><strong>Email:</strong> Sathwik Tech@mycompany.com</p>
+      <p><strong>Phone:</strong> +1 234 567 890</p>
+      
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24173.14336340852!2d-74.0060153!3d40.7127281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3166ed87c5%3A0xadb7e4fef3c3a89f!2sNew%20York%20City%2C%20USA!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sathwik Tech Company . All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function validateContact() {
+      var name = document.contactForm.name.value.trim();
+      var email = document.contactForm.email.value.trim();
+      var message = document.contactForm.message.value.trim();
+
+      // Name validation
+      if(name.length < 3){
+        alert("Name must be at least 3 characters long.");
+        return false;
+      }
+
+      // Email validation without regex
+      if(email == "" || !email.includes("@") || !email.includes(".")){
+        alert("Please enter a valid email address.");
+        return false;
+      }
+      var atPos = email.indexOf("@");
+      var dotPos = email.lastIndexOf(".");
+      if(atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= email.length){
+        alert("Please enter a proper email format (e.g., user@example.com).");
+        return false;
+      }
+
+      // Message validation
+      if(message.length < 10){
+        alert("Message must be at least 10 characters long.");
+        return false;
+      }
+
+      return true; // All checks passed
+    }
+  </script>
+
+</body>
+</html>
