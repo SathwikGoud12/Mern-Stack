@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    background-color: aquamarine;
+padding-top: 30px;
+padding-bottom: 30px;
+font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.class1{
+    text-align: center;
+}
+.heading{
+    font-size: x-large;
+}
+.class2{
+    padding-right: 1000px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 30px;
+}
+p{
+    font-size: large;
+}
+.class3{
+    font-size: large;
+}
+.total{
+    background-color: bisque;
+}

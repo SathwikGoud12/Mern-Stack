@@ -1,0 +1,35 @@
+.description{
+    height: 300px;
+    width: 700px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    text-align: center;
+    float: right;
+}
+.div1{
+    text-align: center;
+}
+h1{
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    text-align: center;
+    background-color: aqua;
+    border: 2px;
+    border-color: black;
+}
+h3{
+    padding-left: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:skyblue;
+
+}
+.main{
+    text-align: center;
+    color:slateblue;
+    padding-left: 300px;
+    padding-top: 100px;
+    font-size: x-large;
+    font-style: italic;
+}

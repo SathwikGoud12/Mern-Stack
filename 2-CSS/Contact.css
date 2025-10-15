@@ -1,0 +1,28 @@
+h1{
+    padding-top: 30px;
+    text-align: center;
+    background-color: cadetblue;
+    height: 70px;
+}
+.img{
+    background-image: url(contactimg.jpg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 30px;
+}
+.class1{
+    color: blueviolet;
+    padding-top: 50px;
+}
+.class2{
+    color: chocolate;
+}
+.class3{
+    color: crimson;
+}
