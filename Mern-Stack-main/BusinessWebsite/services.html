@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | MyCompany</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .services-hero {
+      background:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      height: 50vh;
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; text-align:center;
+    }
+    .services-hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeUp 2s ease forwards;
+    }
+    .services-hero h1 span {
+      color: #ffd700;
+    }
+
+    .services-container {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px; padding: 50px 20px;
+    }
+
+    .service-card {
+      background:#fff; padding:20px; border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-card img {
+      width:100%; height:180px; object-fit:cover; border-radius:10px;
+      margin-bottom:15px;
+    }
+    .service-card h3 {
+      margin-bottom:10px;
+      font-size: 1.2rem;
+      color:#333;
+    }
+    .service-card p {
+      color:#666;
+      line-height: 1.4;
+    }
+
+    .service-card:nth-child(1) { animation-delay: 0.2s; }
+    .service-card:nth-child(2) { animation-delay: 0.4s; }
+    .service-card:nth-child(3) { animation-delay: 0.6s; }
+    .service-card:nth-child(4) { animation-delay: 0.8s; }
+    .service-card:nth-child(5) { animation-delay: 1s; }
+    .service-card:nth-child(6) { animation-delay: 1.2s; }
+    .service-card:nth-child(7) { animation-delay: 1.4s; }
+    .service-card:nth-child(8) { animation-delay: 1.6s; }
+
+    footer {
+      background:#111; color:#fff;
+      text-align:center; padding:20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">My<span>Company</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="services-hero">
+    <h1>Our <span>Services</span></h1>
+  </section>
+
+  <section>
+    <div class="services-container">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Consulting">
+        <h3>Business Consulting</h3>
+        <p>Expert guidance to grow your business effectively.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80" alt="IT Solutions">
+        <h3>IT Solutions</h3>
+        <p>Custom technology solutions for modern enterprises.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=600&q=80" alt="Marketing">
+        <h3>Digital Marketing</h3>
+        <p>Boost your brand with SEO, ads, and campaigns.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=600&q=80" alt="Cloud Services">
+        <h3>Cloud Services</h3>
+        <p>Secure cloud storage and enterprise hosting solutions.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=600&q=80" alt="Training">
+        <h3>Corporate Training</h3>
+        <p>Upskill your team with workshops and certifications.</p>
+      </div>
+<div class="service-card">
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development">
+  <h3>Web Development</h3>
+  <p>Modern, responsive websites tailored for your business.</p>
+</div>
+<div class="service-card">
+  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Solutions">
+  <h3>AI & Automation</h3>
+  <p>Smart AI-powered automation to optimize workflows.</p>
+</div>
+<div class="service-card">
+  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Software Development">
+  <h3>Software Development</h3>
+  <p>End-to-end software design and development solutions.</p>
+</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MyCompany. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function task1() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("DownloadFile");
+            resolve();
+          }, 2000);
+        });
+      }
+      function task2() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("Compress File");
+            resolve();
+          }, 3000);
+        });
+      }
+      function task3() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("UpLoadFile");
+            resolve();
+          }, 2000);
+        });
+      }
+      task1()
+      .then(task2)
+      .then(task3)
+      .then(console.log("All Tasks Completed"));
+    </script>
+  </body>
+</html>

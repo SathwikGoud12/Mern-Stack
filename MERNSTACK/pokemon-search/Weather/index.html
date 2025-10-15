@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff9800;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #btn:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        #info {
+            margin-top: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            color: #333;
+            max-width: 400px;
+        }
+
+        .weather-detail {
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Optional: add emoji for fun */
+        .icon {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="btn">Get Weather 🌤️</button>
+        <div id="info">
+            Click the button to see detailed weather info
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        const info = document.querySelector("#info");
+
+        btn.addEventListener("click", async function() {
+            try {
+                const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=17.3850&longitude=78.4867&current_weather=true");
+                const jsonData = await response.json();
+                console.log(jsonData);
+
+                const weather = jsonData.current_weather;
+
+                info.innerHTML = `
+                    <div class="title">🌆 Weather in Hyderabad</div>
+                    <div class="weather-detail">🌡️ Temperature: ${weather.temperature}°C</div>
+                    <div class="weather-detail">💨 Wind Speed: ${weather.windspeed} km/h</div>
+                    <div class="weather-detail">🕒 Time: ${weather.time}</div>
+                    <div class="weather-detail">📈 Elevation: ${jsonData.elevation} m</div>
+                    <div class="weather-detail">🌐 Timezone: ${jsonData.timezone}</div>
+                    <div class="weather-detail">🌤️ Weather Code: ${weather.weathercode}</div>
+                `;
+            } catch(error) {
+                console.log(error.message);
+                info.textContent = "Failed to fetch weather data. Please try again!";
+            }
+        });
+    </script>
+</body>
+</html>

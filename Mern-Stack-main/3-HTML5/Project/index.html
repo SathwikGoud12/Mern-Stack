@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#">SimpleShop</a>
+      <nav class="nav">
+        <a href="#products">Shop</a>
+        <a href="#new">New</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <form class="search" role="search">
+        <input type="search" placeholder="Search products…" aria-label="Search" />
+      </form>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-row">
+      <div class="hero-text">
+        <h1>Find your next pair</h1>
+        <p>Comfortable, durable, and stylish shoes for every day. Free shipping on orders over $60.</p>
+        <a class="btn" href="#products">Shop Now</a>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=1200&auto=format&fit=crop"
+             alt="White sneakers on a clean background" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Browse Categories</h2>
+      <div class="cat-row">
+        <a href="#products" class="cat">Men</a>
+        <a href="#products" class="cat">Women</a>
+        <a href="#products" class="cat">Kids</a>
+        <a href="#products" class="cat">Running</a>
+        <a href="#products" class="cat">Hiking</a>
+        <a href="#products" class="cat">Lifestyle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="products">
+    <div class="container">
+      <h2 class="section-title">Popular Products</h2>
+
+      <div class="product-list">
+        <!-- Card 1 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=900&auto=format&fit=crop"
+               alt="Black running shoe" />
+          <h3 class="product-name">AeroFlow Runner</h3>
+          <p class="product-meta">Men • Running</p>
+          <div class="product-bottom">
+            <span class="price">$119</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1542291022-9585d7b2f7b8?q=80&w=900&auto=format&fit=crop"
+               alt="White and pink running shoe" />
+          <h3 class="product-name">CloudKnit Lite</h3>
+          <p class="product-meta">Women • Running</p>
+          <div class="product-bottom">
+            <span class="price">$98</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=900&auto=format&fit=crop"
+               alt="Brown hiking boot" />
+          <h3 class="product-name">TrailGuard Pro</h3>
+          <p class="product-meta">Men • Hiking</p>
+          <div class="product-bottom">
+            <span class="price">$136</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?q=80&w=900&auto=format&fit=crop"
+               alt="Olive green trail shoe" />
+          <h3 class="product-name">StormGuard Trail</h3>
+          <p class="product-meta">Women • Hiking</p>
+          <div class="product-bottom">
+            <span class="price">$129</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=900&auto=format&fit=crop"
+               alt="Colorful kids sneakers" />
+          <h3 class="product-name">Zoomies Kids</h3>
+          <p class="product-meta">Kids • Running</p>
+          <div class="product-bottom">
+            <span class="price">$59</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1527010154944-f2241763d806?q=80&w=900&auto=format&fit=crop"
+               alt="Black high-top sneaker" />
+          <h3 class="product-name">Street High</h3>
+          <p class="product-meta">Men • Lifestyle</p>
+          <div class="product-bottom">
+            <span class="price">$115</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1546502203-67a5b8d82fa1?q=80&w=900&auto=format&fit=crop"
+               alt="White low-top sneaker" />
+          <h3 class="product-name">Blanc Low</h3>
+          <p class="product-meta">Women • Lifestyle</p>
+          <div class="product-bottom">
+            <span class="price">$92</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90ff?q=80&w=900&auto=format&fit=crop"
+               alt="Blue kids running shoes" />
+          <h3 class="product-name">Sprint Kid</h3>
+          <p class="product-meta">Kids • Running</p>
+          <div class="product-bottom">
+            <span class="price">$54</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section id="new" class="new">
+    <div class="container">
+      <h2 class="section-title">New Arrivals</h2>
+      <div class="product-list">
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?q=80&w=900&auto=format&fit=crop"
+               alt="Cream sneakers on pedestal" />
+          <h3 class="product-name">Nimbus Evo</h3>
+          <p class="product-meta">Lifestyle</p>
+          <div class="product-bottom">
+            <span class="price">$139</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?q=80&w=900&auto=format&fit=crop"
+               alt="Orange runner shoes" />
+          <h3 class="product-name">Ignite Pace</h3>
+          <p class="product-meta">Running</p>
+          <div class="product-bottom">
+            <span class="price">$129</span>
+            <button class="btn btn-small">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container about-row">
+      <div>
+        <h2 class="section-title">About SimpleShop</h2>
+        <p>We curate everyday shoes that feel great and last long—no hype, just honest quality. 
+           Free returns within 14 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-col">
+        <h3>SimpleShop</h3>
+        <p>Comfort first. Style always.</p>
+      </div>
+      <form class="footer-col newsletter">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" type="email" placeholder="Enter your email" />
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <p class="copy">© 2025 SimpleShop. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function greet(name){
+            console.log("HEllo",name);
+        }
+      function  display(name,callback){
+        setTimeout(() => {
+            console.log("What is your name");
+        }, 2000);
+        callback(name);
+      }
+      display("Sathwik",greet);
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyderabad News</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h2>Hyderabad Latest News</h2>
+  <button id="getNewsBtn">Get News</button>
+  <ul id="newsList"></ul>
+
+  <script>
+    const url = "https://gnews.io/api/v4/search?q=Hyderabad&lang=en&country=in&max=10&apikey=0149fbd1a4963bd882f94e349068c4ca";
+
+    document.getElementById("getNewsBtn").addEventListener("click", function() {
+      fetch(url)
+        .then(sathwik => sathwik.json())
+        .then(data => {
+          const newsList = document.getElementById("newsList");
+          newsList.innerHTML = "";
+
+          if (data.articles && data.articles.length > 0) {
+            data.articles.forEach(article => {
+              const li = document.createElement("li");
+              li.innerHTML = `
+                <a href="${article.url}" target="_blank">${article.title}</a>
+                <p>${article.description || ""}</p>
+              `;
+              newsList.appendChild(li);
+            });
+          } else {
+            newsList.innerHTML = "<li>No Hyderabad news found.</li>";
+          }
+        })
+        .catch(error => console.log("Error:", error));
+    });
+  </script>
+</body>
+</html>

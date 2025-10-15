@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function myfunction(){
+    var uname=document.myform.usename.value;
+    var upass=document.myform.userpass.value;
+    if(uname==null || uname==""){
+alert("username should not be empty")
+return false;
+    }else if(upass.legth<6){
+alert("Password should be more than 6 digits")
+return false;
+    }
+    }
+</script>
+<form action="/1-HTML/loginSuccess.html"  onsubmit="return myfunction()">
+    <input type="username">UserName</input>
+    <input type="userpass">Password</input>
+    <input type="submit">
+</form>
+</body>
+</html>

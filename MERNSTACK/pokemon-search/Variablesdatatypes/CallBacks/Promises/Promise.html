@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const prs = new Promise((resolve, reject) => {
+        let success = false;
+        setTimeout(() => {
+          if (success) {
+            resolve("Resolved");
+          }
+          else{
+            reject("Rejected");
+          }
+        }, 2000);
+      });
+      prs.then((message) => {
+        console.log(message);
+      });
+      prs.catch((error) => {
+        console.log(error.message);
+      });
+    </script>
+  </body>
+</html>

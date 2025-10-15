@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //define the URL we want to fetch data from
+        const url='https://jsonplaceholder.typicode.com/posts';
+        fetch(url)
+        .then(function(resram){
+            //Check if the respose status is not ok (like 404, 500)
+            if(!resram.ok){
+                //If not Ok throw an error
+                throw new Error('Error fetch data : RAM');
+            }
+            //If response is ok, convert it to Json
+            return resram.json();
+        })
+//Second .then() handles the Json data
+.then(function(data){
+//Log the fetched data the Json data
+console.log('Data from the API',data);
+}
+)
+.catch(function(error){
+console.error('HEllo Error:',error);
+}
+);
+        
+
+        
+    </script>
+</body>
+</html>

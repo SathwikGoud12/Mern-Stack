@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fileDownload(callback){
+            console.log("Found the file");
+callback();
+        }
+        function result(){
+            setTimeout(()=>{
+                console.log("Downloading the file");
+            },2000)
+            setTimeout(()=>{
+console.log("Compressing it");
+            },2000)
+           setTimeout(()=>{
+                console.log("Downloaded");
+            },2000) 
+        }
+fileDownload(result);
+
+    </script>
+</body>
+</html>

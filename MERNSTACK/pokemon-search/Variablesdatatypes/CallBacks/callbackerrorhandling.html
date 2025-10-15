@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Example</title>
+</head>
+<body>
+    <script>
+        function fetchUrl(url, callback) {
+            setTimeout(() => {
+                if (url.includes("error")) {
+                    callback(new Error("Something went wrong"), null);
+                } else {
+                    callback(null, "Perfect");
+                }
+            }, 1000); // 1-second delay to simulate async operation
+        }
+
+        // Call the function with a URL and a callback
+        fetchUrl("https://example.com/data", function(error, data) {
+            if (error) {
+                console.log("Error:", error.message);
+            } else {
+                console.log("Success:", data);
+            }
+        });
+
+        // Example with error URL
+        fetchUrl("https://example.com/error", function(error, data) {
+            if (error) {
+                console.log("Error:", error.message);
+            } else {
+                console.log("Success:", data);
+            }
+        });
+    </script>
+</body>
+</html>

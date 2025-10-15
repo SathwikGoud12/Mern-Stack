@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hone2{
+            color: blue;
+        }
+    </style>
+</head>
+<h1 id="hone">Hello Sathwik</h1>
+<img id="imgg"/>
+<script>
+const hone=document.getElementById("hone");
+hone.textContent="WelCome";
+const span=document.createElement("span");
+span.textContent="Thank You";
+hone.appendChild(span);
+hone.setAttribute("class","hone1");
+console.log(hone.hasAttribute("class"));
+console.log(hone.getAttribute("class"));
+const imgg=document.getElementById("imgg");
+imgg.setAttribute("src","https://static.independent.co.uk/2023/10/12/05/SEI175556776.jpg?width=1200&auto=webp")
+imgg.setAttribute("height","200px")
+imgg.setAttribute("width","300px");
+hone.classList.add("hone2");
+hone.classList.remove("hone2");
+hone.classList.toggle("hone2");
+console.log(hone.classList.contains("hone2"));
+
+
+</script>
+<body>
+    
+</body>
+</html>
