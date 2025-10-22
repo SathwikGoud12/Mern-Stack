@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+<button id="btn">Click</button>
+
+    </div>
+    <script>
+        const container=document.getElementById("container");
+        const btn=document.getElementById("btn");
+        btn.addEventListener("click",function(e){
+            btn.textContent="Clicked";
+            btn.disabled=true;
+            const paragraph=document.createElement("p");
+            paragraph.textContent="Hello";
+            container.appendChild(paragraph);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cartList = ["Soap", "Snacks", "Vegetables"];
+      function SelectingItems() {
+        return new Promise((resolve, reject) => {
+          let items = false;
+          if (items) {
+            resolve("Items Selected");
+          }
+          reject("items Not Found");
+        });
+      }
+      function billing(paymentInfo) {
+        return new Promise((resolve) => {
+          resolve(`Payment Done For ${paymentInfo.Name}`);
+        });
+      }
+      function shoppingDone() {
+        return new Promise((resolve) => {
+          resolve("Shoping Done");
+        });
+      }
+      const paymentInfo = {
+        Name: "SAthwik",
+        billid: "1234",
+      };
+      SelectingItems(cartList[0])
+        .then((message) => {
+          console.log(message);
+          return billing(paymentInfo);
+        })
+        .catch((Error) => {
+          console.log(Error);
+        })
+        .then((message1) => {
+          console.log(message1);
+          return shoppingDone();
+        })
+        .then((status) => {
+          console.log(status);
+        });
+    </script>
+  </body>
+</html>

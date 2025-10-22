@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   const prs=new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        resolve("Promise is Resolved");
+    },40000)
+        })
+        const prs1=new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        resolve("Promise is Resolved1");
+    },20000)
+        })
+//               prs.then((message)=>{
+// console.log(message);
+// console.log("HelloSathwik");
+// prs1.then((message1)=>{
+//     console.log(message);
+//     console.log("HelloSathwik1");
+// })
+//      })
+
+ async function handlePromise() {
+     const data= await prs;
+     console.log("HEllo Sathwik")
+     console.log(data);
+     const data1= await prs1;
+          console.log("HEllo Sathwik1")
+     console.log(data1);
+ }
+  handlePromise();
+ cons
+    </script>
+
+</body>
+</html>

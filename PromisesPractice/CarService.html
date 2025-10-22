@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cars=["i20", "Eritiga","Baleno"];
+function  bookService(serviceid){
+return new Promise((resolve, reject) => {
+    const serviceid="1234";
+    let success=false;
+    if(success){
+        resolve(`Car is Booked with ${serviceid}`);
+    }
+    reject("Error Car is not booked");
+})
+}
+function serviceCar(serviceid){
+return new Promise((resolve) => {
+    resolve("Service is Completed")
+})
+}
+function makePayment(serviceid){
+return new Promise((resolve, reject) => {
+    resolve("Payment done");
+})
+}
+function sendInvoice(paymentInfo){
+    return new Promise((resolve) => {
+        resolve("Payment Invoice")
+    })
+}
+bookService(cars[0])
+  .then((serviceid) => {
+    console.log(serviceid); // ✅ log booking message
+    return serviceCar(serviceid);
+  })
+  .catch((error)=>{
+    console.log(error);
+    return "Fallback Service ID";
+  })
+  .then((serviceMsg) => {
+   console.log(serviceMsg); // ✅ log service message
+    return makePayment(serviceMsg);
+  })
+  .then((paymentInfo) => {
+    console.log(paymentInfo); // ✅ log payment message
+    return sendInvoice(paymentInfo);
+  })
+  .then((invoiceMsg) => {
+    console.log(invoiceMsg); // ✅ log invoice message
+  })
+  .catch((err) => {
+    console.log("Error:", err);
+  })
+  .then(() => {
+    console.log("Service process finished (no matter what happens).");
+  });
+
+    </script>
+</body>
+</html>
